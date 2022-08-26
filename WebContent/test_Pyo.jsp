@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-				경훈쓰 항상 감사합니다
+			경훈쓰 감사합니당
 </body>
 </html>
