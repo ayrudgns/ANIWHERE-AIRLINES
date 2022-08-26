@@ -1,0 +1,11 @@
+package hsgtest;
+
+public class Git_test {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//±ê Å×½ºÆ®
+		//2Æ®
+	}
+
+}
