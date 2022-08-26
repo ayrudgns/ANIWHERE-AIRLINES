@@ -19,7 +19,7 @@
 	h3{
 		text-align : center;
 		font-size : 13pt;
-		}
+	}
 	h4{
 		text-align : right;
 		font-weight : bold;
