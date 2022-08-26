@@ -15,7 +15,7 @@
 		height: 250px;
 		font-size : 10pt;
 		line-height : 30px;		/* 줄간격 조절 코드 */
-	}
+}
 	h3{
 		text-align : center;
 		font-size : 13pt;
