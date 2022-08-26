@@ -66,8 +66,7 @@
 			<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 			<td><a href="">이용 약관</a></td>
 			<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="">마일리지 혜택</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-			<td><a href=""></a></td>
-			<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>	
+		</tr>
 	</table>
 	<br>
 	<b>팀 프로젝트 D조</b>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;대표자&nbsp;&nbsp;&nbsp;이 경 훈&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;프로젝트 등록번호 2022-09-14<br>
