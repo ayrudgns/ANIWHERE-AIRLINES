@@ -1,0 +1,126 @@
+@charset "EUC-KR";
+.title {
+	margin-top:50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.sign-table input {
+    width: 300px;
+    height: 35px;
+    border-radius: 5px;
+    padding: 10px 20px;
+    border: solid thin;
+
+}
+
+.sign-table {
+	width:600px;
+	text-align:center;
+    margin: 100px auto;
+    border: solid thin;
+  
+}
+
+
+.sign-table th {
+    background-color: lightblue;
+    padding: 10px;
+    margin:10px;
+
+}
+
+.gender {
+    width: 45px;
+    height: 40px;
+    background-color: azure;
+    border: solid thin;
+    margin: 10px 0 10px 0;
+
+}
+
+
+
+.certification {
+    border: solid thin;
+    background-color: azure;
+    width: 89.5px;
+    height: 40px;
+    margin: 10px 0 10px 0;
+    border-radius: 5px;
+    
+}
+.certification:active{
+    background-color: darkblue;
+    color: white;
+
+}
+.certification[disabled]{
+	 pointer-events: none;
+    border: solid thin;
+    background-color: azure;
+    width: 89.5px;
+    height: 40px;
+    margin: 10px 0 10px 0;
+    border-radius: 5px;
+    
+}
+.wrap{
+    min-width: 1100px;
+    max-width:1600px;
+    height: 100%;
+    margin: auto;
+}
+.box {
+  width: 92px;
+  height: 35px;
+  box-sizing: border-box;
+  margin-left: 5px;
+  padding: 5px 0 5px 10px;
+  border-radius: 4px;
+  border: 1px solid black;
+  color: graytext;
+  background-color: #ffffff;
+  font-family: 'Montserrat', 'Pretendard', sans-serif;
+}
+
+
+.box::-webkit-scrollbar {
+  width: 10px;
+ 
+}
+
+.box::-webkit-scrollbar-thumb {
+  background-color: #5e2bb8;
+  border-radius: 3px;
+}
+
+.box::-webkit-scrollbar-track {
+  background-color: #ebe9e9;
+  border-radius: 6px;
+}
+
+.userInfo{
+	margin: auto;
+	width:700px;
+}
+.userInfo th{
+	width: 100px;
+}
+.userInfo input{
+	padding: 0 30px;
+	width: 300px;
+	height: 50px;
+	margin: 10px;
+	border:solid thin grey;
+	border-radius: 5px;
+}
+
+.userInfo button{
+	background-color:white;
+	border:solid thin grey;
+	border-radius:4px;
+	width: 150px;
+	height: 40px;
+	color: black;
+}

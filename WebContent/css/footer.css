@@ -1,0 +1,39 @@
+@charset "EUC-KR";
+
+footer{
+    background-color : menutext;
+    color : white;
+    text-align : left;
+    padding : 30px;
+    margin : auto;
+    height: 250px;
+    font-size : 10pt;
+    line-height : 30px;		/* 줄간격 조절 코드 */
+}
+.footer h3{
+    text-align : center;
+    font-size : 13pt;
+}
+.footer h4{
+    text-align : right;
+    font-weight : bold;
+}
+.footer tr{
+    font-size : 12px;
+}
+.footer th{
+    font-size : 15px;
+    font-weight : bold;
+}
+.footer td{
+    color : white;
+    line-height : 20px;
+}
+.footer a{
+    text-decoration: none;
+    color:gray;
+}
+.footer a:hover{
+    color : rgb(0, 0, 0);
+    cursor : pointer;
+}

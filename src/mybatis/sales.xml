@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="sales">
+ 	<select id="todaySales" resultType="vo.SalesVO">
+		SELECT TO_CHAR(SYSDATE, 'YYYY-MM-DD') AS "TODAY", SUM(PAY_SUM) AS "T_SALES", COUNT(PAY_SUM) AS "CNT"
+		FROM PAYMENTS p, RESERVATION r
+		WHERE p.RES_NO = r.RES_NO
+		AND RES_DATE = SYSDATE
+ 	</select>
+ 	
+ 	<select id="todaySalesList" resultType="vo.SaleslistVO">
+		SELECT r.RES_NO, RES_DATE, DEP_PORT, ARR_PORT, OCCUPANT, SEAT_COUNT, PAY_SUM 
+		FROM PAYMENTS p, RESERVATION r, AIR_PLAN_C apc 
+		WHERE p.RES_NO = r.RES_NO AND r.AP_NAME = apc.AP_NAME
+		AND TO_CHAR(RES_DATE, 'YYYY-MM-DD') = TO_CHAR(SYSDATE, 'YYYY-MM-DD')
+		ORDER BY DEP_PORT	
+ 	</select>
+ 	
+ 	<select id="monthSales" resultType="vo.SalesVO">
+		SELECT RES_MONTH, COUNT(PAY_SUM) AS "CNT", SUM(PAY_SUM) AS "M_SALES"
+		FROM (SELECT TO_CHAR(RES_DATE, 'YYYY-MM') AS "RES_MONTH", PAY_SUM
+				FROM PAYMENTS p, RESERVATION r
+				WHERE p.RES_NO = r.RES_NO)
+		GROUP BY RES_MONTH
+		ORDER BY RES_MONTH DESC
+ 	</select>
+ 
+  	<select id="AllSalesList" resultType="vo.SaleslistVO">
+	  	SELECT r.RES_NO, RES_DATE, OCCUPANT, DEP_PORT, ARR_PORT, SEAT_COUNT, PAY_SUM 
+		FROM PAYMENTS p, RESERVATION r, AIR_PLAN_C apc 
+		WHERE p.RES_NO = r.RES_NO AND r.AP_NAME = apc.AP_NAME
+		ORDER BY RES_DATE
+ 	</select>
+ 	
+ 	<select id="todayPer" resultType="vo.TodayPerVO">
+	 	SELECT TRUNC(((SUM(SEAT_COUNT) / SUM(PASSENGER_COUNT)) * 100), 3) AS "PER", 
+	 	NVL(SUM(PASSENGER_COUNT), 0) AS "ALL_C", NVL(SUM(SEAT_COUNT), 0) AS "TODAY_C"
+		FROM RESERVATION r, AIRPLANE a
+		WHERE r.AP_NAME = a.AP_NAME
+		AND RES_DATE = TO_DATE(SYSDATE, 'YYYY-MM-DD')
+ 	</select>
+ 	
+ 	<select id="todayFlight" resultType="vo.CustomPlanVO">
+		SELECT * FROM AIR_PLAN_C WHERE TO_CHAR(DEP_TIME, 'YYYY-MM-DD') = TO_CHAR(SYSDATE, 'YYYY-MM-DD')
+		ORDER BY DEP_TIME
+ 	</select>
+ 	
+ 	<select id="flightSchedule" resultType="vo.CustomPlanVO">
+ 		SELECT * FROM AIR_PLAN_C
+		WHERE DEP_TIME &lt; TO_CHAR(SYSDATE + (INTERVAL '3' DAY), 'YYYY-MM-DD') 
+		AND DEP_TIME &gt; TO_CHAR(SYSDATE - (INTERVAL '3' DAY), 'YYYY-MM-DD')
+		ORDER BY DEP_TIME
+ 	</select>
+ 
+ </mapper> 
+ 

@@ -1,0 +1,43 @@
+@charset "EUC-KR";
+
+.searchwrap{
+	 min-width: 1100px;
+    max-width:1600px;
+    height: 100%;
+    margin: auto;
+
+	
+	}
+	
+.selectbt{
+	margin-left: -6.1px;
+	width: 458px;
+	height: 51px;
+	background-color:white; 
+	border: none;
+}	
+
+.yourName{
+	margin: 80px;
+	
+	
+}
+
+.yourName input{
+	width: 300px;
+	height: 20px;
+	padding:20px;
+	border-radius:5px; 
+	border:solid thin grey;
+	
+}
+
+.yourName button{
+	margin: 30px;
+	width: 200px;
+	height: 40px;
+	border-radius: 6px;
+	background-color:lightblue; 
+	border:solid thin grey;
+}
+

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="reservation">
+<!-- 예매번호 부여 -->
+	<select id="getResSeq" resultType="int">
+ 		SELECT (MAX(RES_NO) + 1) FROM RESERVATION
+ 	</select>
+ 	
+<!-- 일정번호 부여 -->
+	<select id="getPlanSeq" resultType="int">
+ 		SELECT (MAX(SCHEDULE_NO_C) + 1) FROM RESERVATION
+ 	</select>
+ 	
+<!-- 예매하기 -->
+	<insert id="insertRes" parameterType="vo.C_ResVO">
+		INSERT INTO RESERVATION (RES_NO, MEM_NO, SCHEDULE_NO_C, AP_NAME, RES_DATE, OCCUPANT, SEAT_COUNT, GENDER, BIRTH_DATE, dep_port, ARR_PORT) 
+		VALUES (SEQ_RES_NO.nextval, #{mem_no}, SEQ_SCHEDULE_C_NO.nextval, #{ap_name}, TO_CHAR(SYSDATE, 'YYYY-MM-DD'), #{occupant}, #{seat_count}, #{gender}, #{birth_date}, #{dep_port}, #{arr_port});
+	</insert>
+
+<!-- 예매 내역 조회하기 -->
+	<select id="C_ResList" parameterType="int" resultType="vo.C_ResVO">
+		SELECT * FROM RESERVATION WHERE MEM_NO = #{mem_no} ORDER BY RES_NO
+	</select>
+	
+<!-- 선택한 예매 정보 가져오기 -->
+	<select id="selectRes" parameterType="int" resultType="vo.C_ResVO">
+		SELECT * FROM RESERVATION WHERE RES_NO = #{res_no}
+	</select>
+
+<!-- 예매 수정하기 -->
+	<update id="updateRes" parameterType="vo.C_ResVO">
+		UPDATE RESERVATION SET AP_NAME = #{ap_name}, DEP_PORT = #{dep_port}, ARR_PORT = #{arr_port}, SEAT_COUNT = #{seat_count}
+		WHERE RES_NO = #{res_no}
+	</update>
+	
+<!-- 예매 취소하기 -->
+<delete id="deleteRes" parameterType="int">
+	DELETE FROM RESERVATION WHERE RES_NO = #{res_no}
+</delete>
+
+<!--편도 항공편 조회하기 -->
+	<select id="airSelect" parameterType="vo.CustomPlanVO" resultType="vo.CustomPlanVO">
+		select * from AIR_PLAN_C where DEP_TIME >= #{dep_time_d} 
+		and DEP_PORT = #{dep_port} and ARR_PORT = #{arr_port} 
+		order by DEP_TIME
+	</select>
+
+<!--왕복 항공편 조회하기 -->
+	<select id="R_airSelect" parameterType="vo.CustomPlan2VO" resultType="vo.CustomPlan2VO">
+		select * from AIR_PLAN_C where 
+		DEP_TIME >= (#{dep_time_r}+2) and DEP_PORT = #{arr_port} and ARR_PORT = #{dep_port}
+		order by DEP_TIME
+	</select>	
+</mapper>

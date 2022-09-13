@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="CSN">  <!-- 소문자  -->
+
+	<select id="getPageList" 
+		parameterType="java.util.Map"
+		resultType="vo.CSN"
+		>
+	SELECT * FROM 
+		(SELECT rownum r ,f.* from
+			(SELECT * FROM CUSTOM_SERVICE 
+			ORDER BY notice_no DESC) f)
+	WHERE r BETWEEN #{startNo} AND #{endNo}
+	</select>
+	
+	<select id="getCount" resultType="int">
+	SELECT count(*) FROM CUSTOM_SERVICE
+	</select>
+	
+	<select id="detail" resultType="vo.CSN" parameterType="int">
+		SELECT* FROM CUSTOM_SERVICE WHERE notice_no = #{notice_no}
+</select>
+	
+	<insert id="insert" parameterType="vo.CSN">
+	insert into custom_service(notice_no,title,content) 
+	values (seq_notice_no.nextval, #{title},#{content})
+	</insert>	
+	
+	<update id="readcountUp">
+	UPDATE custom_service 
+	SET READCOUNT = READCOUNT +1 
+	WHERE notice_no = #{notice_no}
+	</update>
+</mapper>  

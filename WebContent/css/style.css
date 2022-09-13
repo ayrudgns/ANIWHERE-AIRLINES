@@ -1,0 +1,204 @@
+@charset "EUC-KR";
+body html {
+    margin: 0px;
+    height: 100%;
+
+}
+
+
+a {
+    text-decoration: none;
+}
+
+.top {
+    display: flex;
+    justify-content: end;
+    margin-right: 50px;
+}
+
+.top a {
+    font-size: 12px;
+    margin-right: 14px;
+    color: black;
+}
+
+.top div>a:hover {
+    color: #5e2bb8;
+
+}
+
+.logo {
+    width: 150px;
+    height: 150px;
+}
+
+.main_search {
+    width: 406px;
+    height: 40px;
+    border-radius: 20px;
+    padding: 0 40px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-around;
+}
+
+.header>div {
+    display: flex;
+    align-items: center;
+
+}
+
+.bi-search {
+    position: relative;
+    right: 40px;
+    margin-bottom: 5px;
+    border: 10px;
+    color: black;
+}
+
+.bi-search:hover,
+
+.nav a:hover {
+    color: #5e2bb8;
+}
+
+.My div a {
+
+    color: black;
+    font-size: small;
+
+}
+
+.My>div {
+    padding: 10px;
+}
+
+.nav {
+    height: 50px;
+    border-top: solid 1.5px #9094a7;
+    border-bottom: solid 1.6px darkgray;
+    display: flex;
+    justify-content: space-around;
+
+}
+
+
+.nav>div {
+
+    display: flex;
+    align-items: center;
+
+}
+
+.nav a {
+    padding: 0 20px;
+    color: black;
+}
+
+.all-menu {
+	
+    background-color: white;
+    color: black;
+    height: 47px;
+    width: 130px;
+    border: none;
+    border-left: solid 2px #9094a7;
+    border-right: solid 2px #9094a7;
+    border-radius: 0;
+
+}
+
+.btn:hover {
+    border-left: solid 2px #9094a7;
+    border-right: solid 2px #9094a7;
+    background-color: white;
+    color: black;
+}
+
+
+
+
+
+
+
+.popularity:hover {
+
+    background-color: lightblue;
+    width: 100px;
+}
+
+.mainImage {
+    background-color: lightblue;
+    width: 100%;
+    height: 800px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.carousel {
+    width: 700px;
+    height: auto;
+}
+
+
+.routs {
+    display: flex;
+    justify-content: left;
+}
+
+.routs>button {
+    margin: 10px;
+    width: 70px;
+    border-radius: 10px;
+    border: none;
+    background-color: white;
+}
+
+.routs>button:hover {
+    margin: 9px 10px;
+    border: solid thin black;
+    background-color: aliceblue;
+}
+
+.air-search {
+    text-align: center;
+}
+
+.air-search>button {
+    margin-top: 10px;
+    width: 400px;
+    height: 40px;
+    border: none;
+    background-color: black;
+    border-radius: 5px;
+    color: white;
+    font-size: 20px;
+}
+
+.air-search>button:hover {
+    background-color: #5e2bb8;
+}
+
+.wrap {
+    min-width: 1100px;
+    max-width:2000px;
+    height: 100%;
+    margin: auto;	
+}
+
+.bi-geo-alt {
+    position: relative;
+    left: 30px;
+    margin-bottom: 5px;
+}
+
+.clicked {
+    background-color: #5e2bb8;
+}
+.popover{
+	width: 100px;
+	height: 100px;
+}

@@ -25,8 +25,17 @@ https://mybatis.org/mybatis-3/ko/getting-started.html 참고
   <!-- JDBC로 처리하는 상당부분의 코드와 파라미터 설정 및 결과 매핑 해준다.   -->
   <mappers>
   	<!-- 실행할 SQL 쿼리 저장한 파일. mapper파일위치와 파일명 오류나지 않도록 확인!! -->
-    
     <!-- sql mapper 파일은 여러개 사용될 수 있습니다. -->
+    <mapper resource="mybatis/Reservation.xml"/>
+    <mapper resource="mybatis/custom.xml"/>
+    <mapper resource="mybatis/Employee.xml"/>
+    <mapper resource="mybatis/CSN.xml"/>
+    <mapper resource="mybatis/ASK.xml"/>
+    <mapper resource="mybatis/member_num.xml"/>
+    <mapper resource="mybatis/comments.xml"/>
+    <mapper resource="mybatis/sales.xml"/>
+
+    
   </mappers>
 </configuration>
 

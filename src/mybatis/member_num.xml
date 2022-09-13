@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <!-- 예매하기에서 회원번호 찾기 기능 구현 테스트를 위해 임시로 만든 xml. -->
+<mapper namespace="select_mem_no">
+	<select id="selectMn" parameterType="java.util.Map" resultType="vo.MembersVO">
+		SELECT mem_no from members where kor_name=#{kor_name} and id=#{id}
+	</select>
+
+
+
+
+</mapper>  
+ 
