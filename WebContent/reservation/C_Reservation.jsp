@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%> <!-- 회원번호를 입력하여 예매한 내역을 확인하기 위한 소스 파일  -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,11 +23,17 @@ img {
 	text-align:center;
 	line-height:25px;
 }
+
+.res_list_div {
+	
+}
 .res_list {
+	margin-left: auto;
+	margin-right: auto;
 	border-style:solid;
 	border-width:1px;
 	border-color:gray;
-	width:100%;
+	width:45%;
 	border-collapse:separate;
 	border-spacing: 0;
 }
@@ -40,6 +46,7 @@ img {
     font-size: 20px;
     text-align: center;
     font-weight: normal;
+    width: 150px;
 }
 
 .res_list td {
@@ -92,6 +99,7 @@ button[id="btn_find_res"] {
 	<h2>회원번호를 입력하여 회원님의 예매 내역을 확인하실 수 있습니다.</h2><br>
 </div>
 <form name="res_find" method="post">
+<div class="res_list_div">
 <table class="res_list">
 	<tr>
 		<th>회원번호</th>
@@ -100,6 +108,7 @@ button[id="btn_find_res"] {
 </table>
 <div class="find_res">
 <button id="btn_find_res" name="enter" onclick="res_search()">조회</button>
+</div>
 </div>
 </form>
 <script type="text/javascript">

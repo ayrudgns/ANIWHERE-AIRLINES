@@ -129,10 +129,10 @@ button[id="rd_cancel_to"]{
 		for(CustomPlanVO avo : alist) {
 	%>
 	<tr>
-		<td><%=avo.getDep_port() %></td>
-		<td><%=avo.getArr_port() %></td>
-		<td><%= sdf.format(avo.getDep_time()) %></td>
-		<td><%= sdf.format(avo.getArr_time()) %></td>
+		<td><input type="hidden" name="rd_test"><%=avo.getDep_port() %></td>
+		<td><input type="hidden" name="rd_test2"><%=avo.getArr_port() %></td>
+		<td><input type="hidden" name="rd_test3"><%= sdf.format(avo.getDep_time()) %></td>
+		<td><input type="hidden" name="rd_test4"><%= sdf.format(avo.getArr_time()) %></td>
 		<td><button type="button" class="checkBtn" value="선택">선택</button></td>
 	</tr>
 	<%
@@ -153,10 +153,10 @@ button[id="rd_cancel_to"]{
 		for(CustomPlan2VO cvo : clist){
 	%>
 	<tr>
-		<td><%=cvo.getDep_port() %></td>
-		<td><%=cvo.getArr_port() %></td>
-		<td><%= sdf.format(cvo.getDep_time()) %></td>
-		<td><%= sdf.format(cvo.getArr_time()) %></td>
+		<td><input type="hidden" name="rd_test5"><%=cvo.getDep_port() %></td>
+		<td><input type="hidden" name="rd_test6"><%=cvo.getArr_port() %></td>
+		<td><input type="hidden" name="rd_test7"><%= sdf.format(cvo.getDep_time()) %></td>
+		<td><input type="hidden" name="rd_test8"><%= sdf.format(cvo.getArr_time()) %></td>
 		<td><button type="button" class="checkBtn_r" value="선택">선택</button></td>
 	</tr>
 	<%
@@ -174,7 +174,8 @@ function gofunction(){
 	var result = confirm("예매를 계속 진행하시겠습니까?");
 	
 	if(result == true){
-		location.href="../reservation/C_Res_Insert.jsp";
+		/* location.href="../reservation/C_Res_Insert.jsp"; */
+		document.forms[0].submit();
 	}
 	else {
 		alert("예매를 계속하고 싶으시면 확인을 눌러주세요.");
@@ -211,6 +212,10 @@ $(".checkBtn").click(function(){
     var deptime = td.eq(2).text();
     var arrtime = td.eq(3).text();
     
+    document.forms[0].rd_test.value = depport
+    document.forms[0].rd_test2.value = arrport
+    document.forms[0].rd_test3.value = deptime
+    document.forms[0].rd_test4.value = arrtime
     
     // 반복문을 이용해서 배열에 값을 담아 사용할 수 도 있다.
     td.each(function(i){    
@@ -260,7 +265,6 @@ $(".checkBtn_r").click(function(){
             " 도착일자 : <font color='red'>" + arrtime + "</font>";        
     
     $("#ex2_Result2").html(str);
-
 });
 </script>
 </div>

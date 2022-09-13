@@ -1,4 +1,4 @@
-<%@page import="dao.C_ResDao"%>
+<%@page import="dao.C_ResDao"%><!-- 예매 삭제 기능 구현 -->
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%

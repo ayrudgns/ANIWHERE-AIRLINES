@@ -1,4 +1,4 @@
-<%@page import="java.sql.Date"%>
+<%@page import="java.sql.Date"%><!-- [편도]항공편 목록 선택 후, 다음 예매 정보를 입력하는 소스 파일 -->
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>

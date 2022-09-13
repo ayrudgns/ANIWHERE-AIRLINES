@@ -1,3 +1,4 @@
+<%@page import="dao.C_ResDao"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="vo.C_ResVO"%>
 <%@page import="java.util.List"%>
@@ -90,17 +91,19 @@ main {
 	background : lime;
 }
 </style>
+<%
+	request.setCharacterEncoding("UTF-8");
+	C_ResDao dao = C_ResDao.getInstance();
+	int mem_no = Integer.parseInt(request.getParameter("mem_no"));
+	
+	List<C_ResVO> list = dao.getList(mem_no);
+	SimpleDateFormat sdf = new SimpleDateFormat("YY년 MM월 dd일 HH시 SS분");
+%>
 <meta charset="UTF-8">
 <title>예매 내역 조회</title>
 </head>
 <body>
 <%@include file="../front/header.jsp" %>
-<%
-	@SuppressWarnings("unchecked")
-	List<C_ResVO> list = (List<C_ResVO>)request.getAttribute("list");
-	SimpleDateFormat sdf = new SimpleDateFormat("YY년 MM월 dd일 HH시 SS분");
-	
-%>
 <main>
 <h3>ANIWHERE 항공을 이용해주셔서 감사합니다.</h3>
 <h4>회원님의 예매 목록입니다.</h4>
@@ -139,10 +142,8 @@ main {
 	%>
 	<tr>
 </table>
-<h6 class="notice">예매번호 선택을 통해 예매 취소를 진행하실 수 있습니다.</h6><br>
-<!-- <div class="pay_btn">
-<button class="btn_pay" type="button" onclick="">결제</button>
-</div> -->
+<h6 class="notice">(미구현)예매 번호 선택을 통해 예매 취소를 진행하실 수 있습니다.</h6><br>
+<h6 style="font-size: 11pt; text-align: center; font-weight: bold;">예매 목록이 조회되지 않을 경우 회원 번호를 다시 확인해주시기 바랍니다.</h6>
 </main>
 <%@include file="../front/footer.jsp" %>
 </body>

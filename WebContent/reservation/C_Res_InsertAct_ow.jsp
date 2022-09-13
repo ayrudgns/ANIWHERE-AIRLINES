@@ -1,4 +1,4 @@
-<%@page import="vo.C_ResVO"%>
+<%@page import="vo.C_ResVO"%>	<!-- [편도]입력한 예매 정보를 최종적으로 확인하는 테이블 -->
 <%@page import="dao.C_ResDao"%>
 <%@page import="vo.ReservationVO"%>
 <%@page import="java.util.Locale"%>
