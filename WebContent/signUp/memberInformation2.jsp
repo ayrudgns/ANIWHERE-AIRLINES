@@ -85,7 +85,7 @@
         <div>
                 <div>생년월일</div>
                 <div>
-                <div class="info" id="info_birth">
+                <div  id="info_birth" >
 			  <input class="box" id="birth-year" name="year" value="<%=request.getParameter("year")%>" readonly="readonly" style="width:170px;">
 			  <span style="width:20px; margin:0px;
 			  		position: relative; left:-60px; color: grey">년</span>

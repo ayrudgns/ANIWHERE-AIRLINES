@@ -14,11 +14,12 @@
  	</select>
  	
 <!-- 예매하기 -->
-	<insert id="insertRes" parameterType="vo.C_ResVO">
-		INSERT INTO RESERVATION (RES_NO, MEM_NO, SCHEDULE_NO_C, AP_NAME, RES_DATE, OCCUPANT, SEAT_COUNT, GENDER, BIRTH_DATE, dep_port, ARR_PORT) 
-		VALUES (SEQ_RES_NO.nextval, #{mem_no}, SEQ_SCHEDULE_C_NO.nextval, #{ap_name}, TO_CHAR(SYSDATE, 'YYYY-MM-DD'), #{occupant}, #{seat_count}, #{gender}, #{birth_date}, #{dep_port}, #{arr_port});
+	<insert id="insertRes" parameterType="vo.C_ResVO" >
+		INSERT INTO RESERVATION VALUES
+		(SEQ_RES_NO.nextval, #{mem_no}, SEQ_SCHEDULE_C_NO.nextval, #{ap_name}, TO_DATE(SYSDATE, 'YYYY-MM-DD'), #{occupant}, 
+		#{seat_count}, #{gender}, #{birth_date})
 	</insert>
-
+	
 <!-- 예매 내역 조회하기 -->
 	<select id="C_ResList" parameterType="int" resultType="vo.C_ResVO">
 		SELECT * FROM RESERVATION WHERE MEM_NO = #{mem_no} ORDER BY RES_NO

@@ -7,11 +7,7 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="../css/style.css">
 <link rel="stylesheet" href="../css/signUp.css">
-<style type="text/css">
-	iframe {
-		background-color: aliceblue;
-	}
-</style>
+
 </head>
 <body>
 <%@include file="../front/header.jsp" %>

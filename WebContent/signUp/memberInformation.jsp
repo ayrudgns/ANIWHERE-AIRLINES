@@ -20,22 +20,7 @@
         <div class="title">
         <h2>본인인증을 진행해주세요.</h2>
     </div>
-    <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">실명확인</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-       실명확인이 완료되었습니다. 휴대폰 인증을 진행해주세요.
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">다음</button>
-      </div>
-    </div>
-  </div>
-</div>
+   
         <table class="sign-table">
             
             <tr>
@@ -61,7 +46,7 @@
 			  <select class="box" id="birth-day" >
 			    <option disabled selected>일</option>
 			  </select>
-			 <button class="certification" type="button" id="identification" >실명확인</button>
+			
 			</div>
                 </td>
             </tr>
@@ -70,8 +55,8 @@
                 <th>휴대폰 번호</th>
                 <td>
                    
-                <input type="tel" id="phoneNum" name="phoneNum" placeholder="휴대폰 번호를 입력해주세요." disabled="disabled" >
-                    <button class="certification" type="button" id ="timer"  disabled="disabled">인증번호</button>
+                <input type="tel" id="phoneNum" name="phoneNum" placeholder="휴대폰 번호를 입력해주세요." >
+                    <button class="certification" type="button" id ="timer"  >인증번호</button>
                 </td>
                
             </tr>
@@ -81,8 +66,8 @@
           
                 <th>인증번호</th>
                  <td> 
-                <input type="text" placeholder="인증번호를 입력해주세요." id="codeNum" name="codeNum"  disabled="disabled">
-                    <button type="button" class="certification"id="codeCheck"  disabled="disabled">인증하기</button>
+                <input type="text" placeholder="인증번호를 입력해주세요." id="codeNum" name="codeNum" >
+                    <button type="button" class="certification"id="codeCheck"  >인증하기</button>
                 </td> 
             </tr>
             </form>

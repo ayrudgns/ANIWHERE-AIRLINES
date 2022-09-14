@@ -100,6 +100,8 @@ button[id="ow_cancel_to"]{
 	int seat_count = Integer.parseInt(request.getParameter("seat_count"));
 	String seat_level = request.getParameter("seat_level");
 	
+	session.setAttribute("seat_count",seat_count);
+	
 	CustomPlanVO vo = new CustomPlanVO(0, ap_name, null, dep_time_d, null, null, dep_port, arr_port);
 	
 	A_ResDao dao = A_ResDao.getInstance();	
@@ -148,6 +150,7 @@ button[id="ow_cancel_to"]{
 	<input type="hidden" name="a_port">
 	<input type="hidden" name="d_time">
 	<input type="hidden" name="a_time">
+	<input type="hidden" name="seat_count" value="<%= seat_count %>">
 <br>
 <div class="ow_confirm_btn">
 <button id="ow_next_to" type="submit" onclick="gofunction()">다음</button>	<!-- 표시 -->

@@ -131,7 +131,7 @@
 
 						<div style="text-align: center;">
 							탑승 인원
-							<input name="seat_count"
+							<input name="seat_count" value="seat_count"
 								style="width: 60px; height: 45px; border: solid thin gray; border-radius: 7px; margin-top: 20px; margin: 20px 0px 0px 25px; padding: 5px;"
 								type="number" min="1" >
 							명

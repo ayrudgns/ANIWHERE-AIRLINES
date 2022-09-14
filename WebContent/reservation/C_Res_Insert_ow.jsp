@@ -165,6 +165,9 @@ hr {
 		String a_port = request.getParameter("a_port");		/* line 181로 가보자 */
 		String d_time = request.getParameter("d_time");
 		String a_time = request.getParameter("a_time");
+		int seat_count = Integer.parseInt(request.getParameter("seat_count"));
+		
+		
 	%>
 <main>
 <div class="container" id="container">
@@ -184,6 +187,7 @@ hr {
 	<input type="hidden" name="a_port" value="<%= a_port %>">
 	<input type="hidden" name="d_time" value="<%= d_time %>">
 	<input type="hidden" name="a_time" value="<%= a_time %>">
+	<input type="hidden" name="seat_count" value="<%= seat_count %>">
 	<table class="table_form" id="table_passenger">
 	<colgroup>
 	<col style="width:180px;">
@@ -306,7 +310,7 @@ hr {
 			<tr>
 				<th>회원번호</th>
 				<td>
-				<input type="number" id="mem_no" name="mem_no" placeholder="회원번호" title="회원번호" style="width:300px; text-transform:none; ime-mode:disabled;"/>
+				<input type="number" id="mem_no" name="mem_no" placeholder="회원번호" style="width:300px; text-transform:none; ime-mode:disabled;"/>
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				<button id="search" type="button" onclick="find_memberNum()">회원번호 찾기</button>
 				</td>
@@ -329,8 +333,8 @@ hr {
 		<tr>
 			<th>성별</th> 
 			<td class="rdps">
-				<input type="radio" name="gender" value="male" id="lblmale"><label>남성</label>
-                <input type="radio" name="gender" value="female" id="lblfemale"><label>여성</label> 
+				<input type="radio" name="k_gender" value="M" id="lblmale"><label>남성</label>
+                <input type="radio" name="k_gender" value="F" id="lblfemale"><label>여성</label> 
 			</td>
 		</tr>
 		<tr>
@@ -442,7 +446,7 @@ hr {
 			<tr>
 				<th>회원번호</th>
 				<td>
-				<input type="number" id="mem_no" name="mem_no" placeholder="회원번호" title="회원번호" style="width:300px; text-transform:none; ime-mode:disabled;"/>
+				<input type="number" id="mem_no" name="mem_no" placeholder="회원번호" style="width:300px; text-transform:none; ime-mode:disabled;"/>
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				<button id="search" type="button" onclick="find_memberNum()">회원번호 찾기</button>
 				</td>

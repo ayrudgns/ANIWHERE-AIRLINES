@@ -17,6 +17,7 @@
 	request.setAttribute("page", pageNo);
 	request.setAttribute("bean", bean);
 	
+	
 	pageContext.forward("replyDetail.jsp");		//화면 페이지로 애트리뷰트와 함께 요청 전달.
 
 %>

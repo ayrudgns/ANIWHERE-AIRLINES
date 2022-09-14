@@ -22,9 +22,9 @@ public class C_ResDao {	//고객 정보 입력 후 예매하기 기능구현
 	
 
 	//예매하기 기능
-	public int insert(C_ResVO vo) {
+	public int insertRes(C_ResVO vo) {
 		SqlSession mapper = factory.openSession();
-		int res = mapper.insert("insertRes",vo);
+		int res = mapper.insert("insertRes", vo);
 		mapper.commit();
 		mapper.close();
 		return res;

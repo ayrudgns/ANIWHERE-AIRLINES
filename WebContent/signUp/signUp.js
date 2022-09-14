@@ -147,35 +147,7 @@ birthDayEl.addEventListener('focus', function () {
     }
   }
 });
-const identification = document.getElementById('identification')
-identification.addEventListener('click', function (){
 
-	let name = document.getElementById('name').value
-	let male= document.getElementById('male').value
-	let female=document.getElementById('female').value
-	let birthYear=document.getElementById('birth-year').value
-	let birthMonth=document.getElementById('birth-month').value
-	let birthDay=document.getElementById('birth-day').value
-	
-	if(name==''){
-		alert("성함을 입력해주세요.")
-	}else if(male==''&&female==''){
-		alert("성별을 체크해 주세요.")
-	}else if(birthYear=='연도'||birthMonth=='월'||birthDay=='일'){
-		alert("생년월일을 입력해주세요.")
-	}else{
-	
-	var myModal = new bootstrap.Modal(document.getElementById('myModal'), {
-  keyboard: false
-})
-myModal.show()
-		document.getElementById("phoneNum").disabled=false;
-		document.getElementById("timer").disabled=false;
-		document.getElementById("codeNum").disabled=false;
-		document.getElementById("codeCheck").disabled=false;
-	}
-	
-});
 
 
 
@@ -215,8 +187,12 @@ function checkCompleted(){
 	}else if(name!=''&&female==0&&male!=''&&year!=''&&month!=''&&day!=''&&phoneNum!=''&&codeNum!=''&&term4!=''){
 	location.href="checkCompleted.jsp?name="+name+"&gender="+male+"&year="+year+"&month="+month+"&day="+day+"&phoneNum="+phoneNum+"&codeNum="+codeNum+"&term4="+term4
 		
-	}else if(name==''||female==''||male==''||year=='연도'||month=='월'||day=='일'){
-		alert("실명인증을 완료하세요.")
+	}else if(name==''){
+		alert("이름을 입력하세요")
+	}else if(female==''||male==''){
+		alert("성별을 선택하세요")
+	}else if(year=='연도'||month=='월'||day=='일'){
+		alert("생년월일을 입력하세요")
 	}else if(phoneNum==''||codeNum==''){
 	alert("휴대폰인증을 완료해주세요.")}
 }
