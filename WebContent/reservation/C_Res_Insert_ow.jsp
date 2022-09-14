@@ -204,7 +204,7 @@ hr {
 		<tr>
 			<th>이름</th> 
 			<td>
-				<input type="text" id="occupant" name="occupant" placeholder="이름(한글)" title="성" style="width:300px; text-transform:none; ime-mode:disabled;"/>
+				<input type="text" id="occupant" name="occupant" placeholder="이름(한글)" title="성" style="width:300px; text-transform:none; ime-mode:disabled;" required="required"/>
 			</td>
 		</tr>					
 		<tr>
@@ -310,7 +310,7 @@ hr {
 			<tr>
 				<th>회원번호</th>
 				<td>
-				<input type="number" id="mem_no" name="mem_no" placeholder="회원번호" style="width:300px; text-transform:none; ime-mode:disabled;"/>
+				<input type="number" id="mem_no" name="mem_no" placeholder="회원번호" style="width:300px; text-transform:none; ime-mode:disabled;" required="required"/>
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				<button id="search" type="button" onclick="find_memberNum()">회원번호 찾기</button>
 				</td>

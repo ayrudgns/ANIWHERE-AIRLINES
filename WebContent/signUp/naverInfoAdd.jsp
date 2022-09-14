@@ -28,7 +28,8 @@
        <input  id="gender" name="gender" value="<%=request.getParameter("gender")%>" style="display: none;">
        <input  id="birthday" name="birthday" value="<%=request.getParameter("birthday")%>" style="display: none;">
       <input  id="phone" name="phoneNum" value="<%=request.getParameter("phone")%>" style="display: none;">
-          <div><button class="loginbt" style="white-space: " type="submit">회원가입</button></div>
+	 <input  id="tel" name="tel" style="display: none;">      
+    <div><button class="loginbt" style="white-space: " type="submit">회원가입</button></div>
              </form>  
              </div>         
 <script type="text/javascript">
